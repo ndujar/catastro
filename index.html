@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Datos catastrales</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="style.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="http://maps.google.com/maps/api/js?key=AIzaSyAAGXWEL5qztVbbLIOJnSdBuVBU3vDOsLA&language=es&region=ES&libraries=places"></script>
+	  <script type="text/javascript" src="gmaps.js"></script>  
+	</head>
+	<body onload="loadMap()">
+	    <input id="pac-input" class="controls" type="text"
+	        placeholder="Enter a location">
+	    <div id="type-selector" class="controls">
+	      <input type="radio" name="type" id="changetype-all" checked="checked">
+	      <label for="changetype-all">All</label>
+	
+	      <input type="radio" name="type" id="changetype-establishment">
+	      <label for="changetype-establishment">Establishments</label>
+	
+	      <input type="radio" name="type" id="changetype-address">
+	      <label for="changetype-address">Addresses</label>
+	
+	      <input type="radio" name="type" id="changetype-geocode">
+	      <label for="changetype-geocode">Geocodes</label>
+	    </div>
+	
+	<div class="jumbotron text-center">
+	  <h1>Datos catastrales de parcelas</h1>
+	  <p>Seleccione su parcela con el boton derecho para ver todos los detalles</p> 
+	  <p>La referencia catastral se compone de los valores de <pc1> y <pc2></p> 
+	</div>
+	
+	<div class="container-fluid">
+	  <div class="row">
+	    <div id="map_canvas" class="col-sm-4" style="background-color:lavenderblush;">Seleccione su parcela</div>
+	    <div class="col-sm-4" style="background-color:lavender;">       <iframe id="catastro"></iframe></div>
+	  </div>
+	</div>
+	
+	</body>
+</html>
