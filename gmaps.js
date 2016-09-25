@@ -126,7 +126,7 @@ function overlay(){
 	  		var latitude = event.latLng.lat();
     		var longitude = event.latLng.lng();
     		console.log( latitude + ', ' + longitude );
-    		var url = 'http://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx/Consulta_RCCOOR?SRS=EPSG:4326&Coordenada_X=' + longitude + '&Coordenada_Y=' + latitude
+    		var url = 'https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx/Consulta_RCCOOR?SRS=EPSG:4326&Coordenada_X=' + longitude + '&Coordenada_Y=' + latitude
 					
 			var x = document.getElementById('catastro')
     		x.setAttribute("src", url);
