@@ -117,7 +117,7 @@ function overlay(){
         oldmap = null;
     }
     //Draw the overlay using the catastro map
-    oldmap = new google.maps.GroundOverlay('http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?SERVICE=WMS&SRS=EPSG:4326&REQUEST=GETMAP&bbox='+sw.lng()+','+sw.lat()+','+ne.lng()+','+ne.lat()+'&width=640&height=480&format=PNG&transparent=Yes&layers=parcela'    , map.getBounds());
+    oldmap = new google.maps.GroundOverlay('https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?SERVICE=WMS&SRS=EPSG:4326&REQUEST=GETMAP&bbox='+sw.lng()+','+sw.lat()+','+ne.lng()+','+ne.lat()+'&width=640&height=480&format=PNG&transparent=Yes&layers=parcela'    , map.getBounds());
     oldmap.setMap(map);
     //Add a listener to collect the right click event and send the data to the iframe.
     //While  catastro doesn't update to allow CORS this is the most suitable form of presenting the data
