@@ -123,12 +123,13 @@ function overlay(){
     //While  catastro doesn't update to allow CORS this is the most suitable form of presenting the data
     google.maps.event.addListener(oldmap, 'dblclick', 
 		function(event) {
-	  		var latitude = event.latLng.lat();
-    		var longitude = event.latLng.lng();
-    		console.log( latitude + ', ' + longitude );
-    		var url = 'https://ovc.catastro.meh.es/ovcservweb/OVCSWLocalizacionRC/OVCCoordenadas.asmx/Consulta_RCCOOR?SRS=EPSG:4326&Coordenada_X=' + longitude + '&Coordenada_Y=' + latitude
-					
-			var x = document.getElementById('catastro')
+		var xMin = event.latLng.lat();
+    		var yMin = event.latLng.lng();
+    		var xMax = xMin + 0.001;
+    		var yMax = yMin + 0.001;
+	    
+		var url='http://ovc.catastro.meh.es/Cartografia/INSPIRE/spadgcwms.aspx?service=wms&request=getfeatureinfo&srs=epsg:4326&width=50&height=50&FORMAT=image/png&query_Layers=BU.BUILDING&query_Layers=CP.CADASTRALPARCEL&bbox=' + xMin + ',' + yMin + ',' + xMax + ',' + yMax + '&i=25&j=25'					
+		var x = document.getElementById('catastro')
     		x.setAttribute("src", url);
 
 		})
