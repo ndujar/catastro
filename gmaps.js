@@ -108,6 +108,7 @@ function loadMap(){
 //This function places the catastro image over the google maps
 function overlay(){
 	 //The size of the map to retrieve will be limited by the current view
+	try{
     var bounds = map.getBounds();
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
@@ -133,5 +134,9 @@ function overlay(){
     		x.setAttribute("src", url);
 
 		})
+	}
+	catch(err){
+		alert(err.message);
+	}
 };
 
