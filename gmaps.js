@@ -128,7 +128,7 @@ function overlay(){
     		var xMax = xMin + 0.001;
     		var yMax = yMin + 0.001;
 	    
-		var url='http://ovc.catastro.meh.es/Cartografia/INSPIRE/spadgcwms.aspx?service=wms&request=getfeatureinfo&srs=epsg:4326&width=50&height=50&FORMAT=image/png&query_Layers=BU.BUILDING&query_Layers=CP.CADASTRALPARCEL&bbox=' + xMin + ',' + yMin + ',' + xMax + ',' + yMax + '&i=25&j=25'					
+		var url='https://ovc.catastro.meh.es/Cartografia/INSPIRE/spadgcwms.aspx?service=wms&request=getfeatureinfo&srs=epsg:4326&width=50&height=50&FORMAT=image/png&query_Layers=BU.BUILDING&query_Layers=CP.CADASTRALPARCEL&bbox=' + xMin + ',' + yMin + ',' + xMax + ',' + yMax + '&i=25&j=25'					
 		var x = document.getElementById('catastro')
     		x.setAttribute("src", url);
 
