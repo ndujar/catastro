@@ -121,7 +121,7 @@ function overlay(){
     oldmap.setMap(map);
     //Add a listener to collect the right click event and send the data to the iframe.
     //While  catastro doesn't update to allow CORS this is the most suitable form of presenting the data
-    google.maps.event.addListener(oldmap, 'rightclick', 
+    google.maps.event.addListener(oldmap, 'dblclick', 
 		function(event) {
 	  		var latitude = event.latLng.lat();
     		var longitude = event.latLng.lng();
