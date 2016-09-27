@@ -118,7 +118,8 @@ function overlay(){
         oldmap = null;
     }
     //Draw the overlay using the catastro map
-    oldmap = new google.maps.GroundOverlay('https://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?SERVICE=WMS&SRS=EPSG:4326&REQUEST=GETMAP&bbox='+sw.lng()+','+sw.lat()+','+ne.lng()+','+ne.lat()+'&width=800&height=480&format=PNG&transparent=Yes&layers=parcela'    , map.getBounds());
+    var overlayURL='https://ovc.catastro.meh.es/cartografia/INSPIRE/spadgcwms.aspx?service=wms&request=getmap&format=png&transparent=Yes&bbox='+sw.lat()+','+sw.lng()+','+ne.lat()+','+ne.lng()+'&width=800&height=480&srs=epsg:4326&layers=cp.cadastralparcel,bu.building,bu.buildingpart,ad.address,au.administrativeunit,au.administrativeboundary,cp.cadastralzoning&styles=elfcadastre,elfcadastre,elfcadastre,number.elfcadastre,elfcadastre,elfcadastre,elfcadastre'
+    oldmap = new google.maps.GroundOverlay(overlayURL   , map.getBounds());
     oldmap.setMap(map);
     //Add a listener to collect the right click event and send the data to the iframe.
     //While  catastro doesn't update to allow CORS this is the most suitable form of presenting the data
@@ -126,8 +127,8 @@ function overlay(){
 		function(event) {
 		var xMin = event.latLng.lat();
     		var yMin = event.latLng.lng();
-    		var xMax = xMin + 0.001;
-    		var yMax = yMin + 0.001;
+    		var xMax = xMin + 0.0001;
+    		var yMax = yMin + 0.0001;
 	    
 		var url='https://ovc.catastro.meh.es/Cartografia/INSPIRE/spadgcwms.aspx?service=wms&request=getfeatureinfo&srs=epsg:4326&width=50&height=50&FORMAT=image/png&query_Layers=BU.BUILDING&query_Layers=CP.CADASTRALPARCEL&bbox=' + xMin + ',' + yMin + ',' + xMax + ',' + yMax + '&i=25&j=25'					
 		var x = document.getElementById('catastro')
